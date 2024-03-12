@@ -1,0 +1,25 @@
+<div class="container">
+  <header class="header">
+    <div class="wrapper">
+      <a class="logo" routerLink="/">Yelp Clone</a>
+
+
+        <form class="search-form">
+    <div class="search-bar">
+      <input type="text" name="search" placeholder="Search for...">
+      <div class="separator"></div>
+      <input type="text" name="location" placeholder="Location">
+      <button type="submit">
+        <img class="img" src="assets/search.png">
+      </button>
+    </div>
+  </form>
+
+      <div class="buttons">
+        <button type="submit"  [routerLink]="['/register']" class="btn">Yelp for business</button>
+        <button type="submit"  [routerLink]="['/login']"class="btn">Login</button>
+        <button type="submit"  [routerLink]="['/register']"class="btn">Sign Up</button>
+      </div>
+    </div>
+  </header>
+</div>

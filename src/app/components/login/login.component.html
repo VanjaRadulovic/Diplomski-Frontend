@@ -1,0 +1,54 @@
+<!--<div class="login-container p-d-flex p-flex-column p-jc-center p-ai-center">-->
+<!--  <h2 class="p-mb-4">Login</h2>-->
+<!--  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="p-fluid">-->
+<!--    <div class="p-field p-mb-3">-->
+<!--      <label for="email">Email:</label>-->
+<!--      <input id="email" type="email" pInputText formControlName="email" [class.ng-invalid]="!loginForm.controls['email'].valid && loginForm.controls['email'].touched" />-->
+<!--      <small *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched" class="p-error">Email is required.</small>-->
+<!--    </div>-->
+<!--    <div class="p-field p-mb-3">-->
+<!--      <label for="password">Password:</label>-->
+<!--      <input id="password" type="password" pInputText formControlName="password" [class.ng-invalid]="!loginForm.controls['password'].valid && loginForm.controls['password'].touched" />-->
+<!--      <small *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched" class="p-error">Password is required.</small>-->
+<!--    </div>-->
+<!--    <button type="submit" pButton label="Login" class="p-mt-2 p-button-rounded p-button-raised p-button-success"></button>-->
+<!--  </form>-->
+<!--  <div class="signup-link p-mt-3">-->
+<!--    <p>Don't have an account? <a routerLink="/signup">Sign up</a></p>-->
+<!--  </div>-->
+<!--</div>-->
+
+<meta name="login" content="width=device-width,intial-scale=1.0">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<body>
+
+<div class="wrapper">
+
+  <form [formGroup]="loginForm" (submit)="login()">
+    <h1>Login</h1>
+    <div class="input-box">
+      <input  [formControlName]="'email'" type="email" placeholder="Email" required>
+      <i class='bx bxs-user'></i>
+    </div>
+    <div class="input-box">
+      <input [formControlName]="'password'" type="password" placeholder="Password" required>
+      <i class='bx bxs-lock-alt' ></i>
+    </div>
+
+    <div class="remember-forget">
+      <label><input [formControlName]="'remember'" inputId="binary" type="checkbox"> Remember me</label>
+      <a href="#">Forgot password?</a>
+    </div>
+
+    <button type="submit" class="btn">Login</button>
+
+    <div class="registar-link">
+      <p>Don't have an account? <a [routerLink]="['/register']">Register</a></p>
+    </div>
+    <a [routerLink]="['']">
+    <button class="btn">Home</button>
+    </a>
+  </form>
+</div>
+</body>
+

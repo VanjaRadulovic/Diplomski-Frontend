@@ -1,0 +1,83 @@
+<body>
+    <div class="container">
+        <header class="header">
+            
+            <div class="wrapper">
+                <a class="logo" routerLink="/"><h1>Yelp Clone</h1></a>
+                <form class="search-form">
+                    <div class="search-bar">
+                        <input type="text" name="search" placeholder="Search for...">
+                        <div class="separator"></div>
+                        <input type="text" name="location" placeholder="Location">
+                        <button type="submit">
+                            <img class="img" src="assets/search.png">
+                        </button>
+                    </div>
+                </form>  
+                      <!-- Conditionally display buttons based on user login status -->
+                      <div *ngIf="isUserLoggedIn(); else loggedOutButtons" class="buttons">
+                        <!-- Display circular profile image for logged-in users -->
+                        <button type="submit" [routerLink]="['/register']" class="btn">Yelp for business</button>
+
+                        <div class="image-container">
+                            <img class="static-image" src="assets/bell.png" alt="Static Image">
+                            <img class="hover-image" src="assets/bell.gif" alt="Hover Image">
+                        </div>
+                        <!-- <img class="active" src="assets/bell.gif"> -->
+                        <img class="img-user" src="assets/user.png" (click)="toggleMenu()">
+
+                        <div class="sub-menu-wrap"  [ngClass]="{'open-menu': subMenuOpen}" id="subMenu">
+                            <div class="sub-menu" >
+                                <div class="user-info">
+                                    <img class="img-user" src="assets/user.png">
+                                    <h2>Name</h2>
+                                </div>
+                                <hr>
+                                <a href="#" class="sub-menu-link">
+                                    <img class="img-user" src="assets/user.png">
+                                    <p>Edit Profile</p>
+                                    <span>></span>
+                                </a>
+                                <a href="#" class="sub-menu-link">
+                                    <img class="img-user" src="assets/user.png">
+                                    <p>Settings & Privacy</p>
+                                    <span>></span>
+                                </a>
+                                <a href="#" class="sub-menu-link" (click)="logout()">
+                                    <img class="img-user" src="assets/user.png">
+                                    <p>Logout</p>
+                                    <span>></span>
+                                </a>
+                            </div>
+                        </div> 
+
+
+                      </div>
+                      <ng-template #loggedOutButtons>
+                        <div class="buttons">
+                          <button type="submit" [routerLink]="['/register']" class="btn">Yelp for business</button>
+                          <button type="submit" [routerLink]="['/login']" class="btn">Login</button>
+                          <button type="submit" [routerLink]="['/register']" class="btn">Sign Up</button>
+                        </div>
+                      </ng-template>                
+
+            </div>
+
+        </header>
+    </div>
+
+    <section class="container">
+        <div class="slider-wrapper">
+          <div class="slider">
+            <img id="slide-1" src="assets/food.jpg" />
+            <img id="slide-2" src="assets/repair-home.jpg" />
+            <img id="slide-3" src="assets/event.jpg" />
+          </div>
+          <div class="slider-nav">
+            <a (click)="onDotClick(1)"></a>
+            <a (click)="onDotClick(2)"></a>
+            <a (click)="onDotClick(3)"></a>
+          </div>
+        </div>
+      </section>
+</body>
