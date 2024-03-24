@@ -37,6 +37,71 @@ token: string = 'empty';
     );
   }
 
+  loginbiz(email: string, password: string): Observable<any> {
+    return this.httpClient.post<LoginResponse>(
+      `${this.apiUrl}/bizsignin`,
+      {
+        email: email,
+        password: password
+      },
+      { observe: 'response' }
+    ).pipe(
+             tap(response => {
+          if (response.status === 200) {
+            console.log(<string>response.body?.token)
+            this.userService.setToken(<string>response.body?.token);
+            this.loginSubject.next();
+          }
+        })
+    );
+  }
+
+  register(firstName: string, lastName: string, email: string, password: string): Observable<any>{
+
+    return this.httpClient.post<LoginResponse>(
+      `${this.apiUrl}/signup`,
+      {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password
+      },
+      { observe: 'response' }
+    ).pipe(
+             tap(response => {
+          if (response.status === 200) {
+            console.log(<string>response.body?.token)
+            this.userService.setToken(<string>response.body?.token);
+            this.loginSubject.next();
+          }
+        })
+    );
+
+  }
+
+  registerbiz(firstName: string, lastName: string, email: string, password: string): Observable<any>{
+
+    return this.httpClient.post<LoginResponse>(
+      `${this.apiUrl}/bizsignup`,
+      {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        password: password
+      },
+      { observe: 'response' }
+    ).pipe(
+             tap(response => {
+          if (response.status === 200) {
+            console.log(<string>response.body?.token)
+            this.userService.setToken(<string>response.body?.token);
+            this.loginSubject.next();
+          }
+        })
+    );
+
+  }
+
   resetPassword(email: string) {
     return this.httpClient.post<any>(`http://localhost:8080/auth/reset-password`, {email: email}, {observe: 'response'});
   }

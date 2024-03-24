@@ -6,11 +6,11 @@ import { AuthService } from 'src/app/services/auth.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-register-biz',
+  templateUrl: './register-biz.component.html',
+  styleUrls: ['./register-biz.component.css']
 })
-export class RegisterComponent {
+export class RegisterBizComponent {
 
   registerForm: FormGroup;
   isLoading: boolean = false;
@@ -35,7 +35,7 @@ export class RegisterComponent {
  }
 
  register() {
-  this.authService.register(this.registerForm.get('firstName')?.value,this.registerForm.get('lastName')?.value,
+  this.authService.registerbiz(this.registerForm.get('firstName')?.value,this.registerForm.get('lastName')?.value,
   this.registerForm.get('email')?.value, this.registerForm.get('password')?.value).subscribe({
     next: response => {
         sessionStorage.setItem("token", <string>response.body?.token);
@@ -61,3 +61,4 @@ export class RegisterComponent {
 
 
 }
+

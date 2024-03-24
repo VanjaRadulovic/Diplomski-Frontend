@@ -14,6 +14,8 @@ import { RegisterComponent } from './components/register/register.component';
 import {ToastrModule} from 'ngx-toastr';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginBizComponent } from './components/login-biz/login-biz.component';
+import { RegisterBizComponent } from './components/register-biz/register-biz.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     LoginComponent,
     HeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginBizComponent,
+    RegisterBizComponent
   ],
   imports: [
     BrowserModule,

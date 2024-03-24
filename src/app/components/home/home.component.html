@@ -17,7 +17,7 @@
                       <!-- Conditionally display buttons based on user login status -->
                       <div *ngIf="isUserLoggedIn(); else loggedOutButtons" class="buttons">
                         <!-- Display circular profile image for logged-in users -->
-                        <button type="submit" [routerLink]="['/register']" class="btn">Yelp for business</button>
+                        <button type="submit" [routerLink]="['/login-biz']" class="btn">Yelp for business</button>
 
                         <div class="image-container">
                             <img class="static-image" src="assets/bell.png" alt="Static Image">
@@ -55,7 +55,7 @@
                       </div>
                       <ng-template #loggedOutButtons>
                         <div class="buttons">
-                          <button type="submit" [routerLink]="['/register']" class="btn">Yelp for business</button>
+                          <button type="submit" [routerLink]="['/login-biz']" class="btn">Yelp for business</button>
                           <button type="submit" [routerLink]="['/login']" class="btn">Login</button>
                           <button type="submit" [routerLink]="['/register']" class="btn">Sign Up</button>
                         </div>

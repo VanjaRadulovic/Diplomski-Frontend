@@ -28,9 +28,9 @@ export class AppComponent {
     })
   }
   ngOnInit() {
-    this.http.get<BackendContent>('http://localhost:8080/api/v1/greetings').subscribe(data => {
-      this.response = data.content;
-    });
+    // this.http.get<BackendContent>('http://localhost:8080/api/v1/greetings').subscribe(data => {
+    //   this.response = data.content;
+    // });
   }
 
   restaurantOptions = [

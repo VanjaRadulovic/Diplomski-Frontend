@@ -1,7 +1,7 @@
 <meta name="login" content="width=device-width,intial-scale=1.0">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 <body>
-
+    <h2>Yelp for business</h2>
 <div class="wrapper">
 
   <form  [formGroup]="registerForm" (submit)="register()">
@@ -23,7 +23,7 @@
     <button type="submit" class="btn">Register</button>
 
     <div class="registar-link">
-      <p>Already have an account? <a [routerLink]="['/login']">Login</a></p>
+      <p>Already have an account? <a [routerLink]="['/login-biz']">Login</a></p>
     </div>
     <a class="nav-link" [routerLink]="['']">
     <button class="btn">Home</button>
